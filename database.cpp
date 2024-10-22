@@ -101,11 +101,28 @@ void Database::addPassword(){
 void Database::editPassword(){
     string nameOfApp;
     string password;
+    cout << "===All Stored Passwords===" << endl;
+            int i = 1;
+            for(const auto& pair : Passwords){
+                cout << i << ". " << pair.first << endl;
+                i++;
+            }
+            cout << endl << "What app's password would you like to edit? (Enter it's name)" << endl << "Your Choice: ";
+            cin >> nameOfApp;
+            if(Passwords.find(nameOfApp) != Passwords.end()){
+                cout << "Enter a new password:";
+                cin >> password;
+                Passwords[nameOfApp] = password;
+                cout << "Password successfully changed!" << endl;
+            }
+            else{
+                cout << "App not found, Try Again!";
+            }
 }
 void Database::promptMenu(){
         cout << "\n" << "Main Menu" << "\n";
         cout << "Please Select a Option" << endl;
-        cout << "1. Add a Password" << endl << "2. View a Password" << endl << "3. Delete a Password" << endl << "4. Exit" << endl << endl;
+        cout << "1. Add a Password" << endl << "2. View a Password" << endl << "3. Delete a Password" << endl << "4. Edit a Password" << endl << "5. Exit" << endl << endl;
         cout << "Your Choice: ";
 }
 void Database::openMainMenu(bool a){
@@ -114,10 +131,10 @@ void Database::openMainMenu(bool a){
         cout << "Could Not Open Menu";
     }
     else{
-        while(userChoice != 4){
+        while(userChoice != 5){
         promptMenu();
         cin >> userChoice;
-        if(userChoice != 1 && userChoice != 2 && userChoice != 3 && userChoice != 4){
+        if(userChoice != 1 && userChoice != 2 && userChoice != 3 && userChoice != 4 && userChoice != 5){
             cout << "Invalid Option" << endl;
            break;
         }
@@ -140,6 +157,12 @@ void Database::openMainMenu(bool a){
             }
             break;
             case 4:
+            {
+                editPassword();
+                savePasswords();
+            }
+            break;
+            case 5:
             {
                 cout << "Goodbye!" << endl;
             }
