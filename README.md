@@ -9,3 +9,7 @@
 # OOP Principles:
 * __Encapsulation__: Sensitive data and functionality are encapsulated within classes, ensuring that access is controlled and modifications are managed through designated methods
 * __Polymorphism__: The application can handle different password types through a common interface, enabling flexibility in how passwords are managed
+
+# Makefile:
+* Implemented a makefile to streamline build process by automating source code compilation, includes rules and dependencies to ensure the app is built efficiently
+* Assist in cleaning codespace by removing unwanted files
