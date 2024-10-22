@@ -98,6 +98,10 @@ void Database::addPassword(){
             Passwords[nameOfApp] = password;
             cout << endl << "Successfully created Password" << endl;
 }
+void Database::editPassword(){
+    string nameOfApp;
+    string password;
+}
 void Database::promptMenu(){
         cout << "\n" << "Main Menu" << "\n";
         cout << "Please Select a Option" << endl;
@@ -167,7 +171,6 @@ void Database::setMasterPassword(){
             
            word = hashPassword(word);
            masterPassword = word;
-        //    masterPassword = word;
             saveHash(word);
             validInput = 1;
         }

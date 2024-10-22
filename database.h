@@ -27,6 +27,7 @@ class Database{
     bool hashExist();
     void promptMenu();
     void addPassword();
+    void editPassword();
     void viewPassword();
     void deletePassword();
     void loadPasswords();
