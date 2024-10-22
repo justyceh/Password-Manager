@@ -115,7 +115,7 @@ void Database::openMainMenu(bool a){
         cin >> userChoice;
         if(userChoice != 1 && userChoice != 2 && userChoice != 3 && userChoice != 4){
             cout << "Invalid Option" << endl;
-            continue;
+           break;
         }
         switch(userChoice){
             case 1:
@@ -164,8 +164,9 @@ void Database::setMasterPassword(){
         cin >> word2;
         if(word == word2){
             cout << "Master Password succesfully created!" << endl;
-            masterPassword = word;
+            
            word = hashPassword(word);
+           masterPassword = word;
         //    masterPassword = word;
             saveHash(word);
             validInput = 1;
