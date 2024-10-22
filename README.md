@@ -13,3 +13,8 @@
 # Makefile:
 * Implemented a makefile to streamline build process by automating source code compilation, includes rules and dependencies to ensure the app is built efficiently
 * Assist in cleaning codespace by removing unwanted files
+
+# Usage:
+* __1st log in__: The first time logging in you will be prompted to create a password to access the app, after creating it run the program again to log in and have full access
+* __Passwords__: They can be set to anything you think of
+* __Resetting__: If you want to delete your passwords or delete your master password to create a new one, delete the masterpasswordhash.txt and storedpasswordhash.txt in order to restart the app with no saved data
